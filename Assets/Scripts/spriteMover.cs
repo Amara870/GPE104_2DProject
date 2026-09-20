@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class spriteMover : MonoBehaviour
 {
-    [Header("Movement Range")]
     // global variables for the min and max range of the random values
     public Vector2 minRange;
     public Vector2 maxRange;
@@ -17,9 +16,6 @@ public class spriteMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Ensure a keyboard is connected and active
-        if (Keyboard.current == null) return;
 
         // check if player is pressing the quit key
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
