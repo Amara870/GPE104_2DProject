@@ -68,7 +68,6 @@ public class ScriptLocalSpace : MonoBehaviour
         // check if the player is pressing the Left Shift key
         if (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed)
         {
-            prevMagnitude = magnitude;
             magnitude = turbo;
             Debug.Log("Shift Key Pressed");
         }
