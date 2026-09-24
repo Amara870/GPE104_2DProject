@@ -4,8 +4,12 @@ using UnityEngine.InputSystem;
 public class SpriteDirections : MonoBehaviour
 {
     public Vector3 worldPosition;
-    // dynamically change the magnitude of the movement in the inspector
+    // dynamically change the speed of the movement in the inspector
     public float magnitude;
+    // dynamically change the turbo speed of the movement in the inspector
+    public float turbo;
+
+    private float prevMagnitude;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +22,7 @@ public class SpriteDirections : MonoBehaviour
     void Update()
     {
         worldSpace();
+        turboSpeed();
     }
     void worldSpace()
     {
@@ -65,6 +70,17 @@ public class SpriteDirections : MonoBehaviour
             worldPosition += Vector3.down * magnitude * Time.deltaTime;
             // update the sprite's position in world space
             transform.position = worldPosition;
+        }
+    }
+
+    void turboSpeed()
+    {
+        // check if the player is pressing the Left Shift key
+        if (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed)
+        {
+            prevMagnitude = magnitude;
+            magnitude = turbo;
+            Debug.Log("Shift Key Pressed");
         }
     }
 }

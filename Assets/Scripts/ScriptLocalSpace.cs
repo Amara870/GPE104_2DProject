@@ -5,6 +5,9 @@ public class ScriptLocalSpace : MonoBehaviour
 {
     public Vector3 localPosition;
     public float magnitude;
+    public float turbo;
+
+    private float prevMagnitude;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,6 +19,7 @@ public class ScriptLocalSpace : MonoBehaviour
     void Update()
     {
         localSpace();
+        turboSpeed();
     }
 
     void localSpace()
@@ -56,6 +60,17 @@ public class ScriptLocalSpace : MonoBehaviour
             // Moves the object right relative to its own local space
             transform.Translate(Vector3.right * magnitude * Time.deltaTime, Space.Self);
             Debug.Log("D Key Pressed");
+        }
+    }
+
+    void turboSpeed()
+    {
+        // check if the player is pressing the Left Shift key
+        if (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed)
+        {
+            prevMagnitude = magnitude;
+            magnitude = turbo;
+            Debug.Log("Shift Key Pressed");
         }
     }
 }
