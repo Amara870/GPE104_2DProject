@@ -30,7 +30,7 @@ public class spriteMover : MonoBehaviour
         }
 
         // check if the player is pressing the movement keys
-        if (Keyboard.current.anyKey.wasPressedThisFrame) {
+        if (Keyboard.current.tKey.wasPressedThisFrame) {
             Debug.Log("Pressing movement keys");
             MoveSprites();
         }
