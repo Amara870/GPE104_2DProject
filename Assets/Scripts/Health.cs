@@ -40,6 +40,13 @@ public class Health : MonoBehaviour
     public void Die()
     {
         // Handle death logic
+        Death death = GetComponent<Death>();
+
+        if (death != null)
+        {
+            death.Die();
+        }
+
         Debug.Log("Character has died.");
     }
 }
