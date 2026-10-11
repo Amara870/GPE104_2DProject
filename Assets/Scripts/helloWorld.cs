@@ -13,11 +13,26 @@ public class helloWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public string OutputHello()
     {
         return "Hello";
+    }
+
+    public void Speak()
+    {
+        Debug.Log("I speak with no input");
+    }
+
+    public void Speak(string message)
+    {
+        Debug.Log(message);
+    }
+
+    public void Speak(int numToPrint)
+    {
+        Debug.Log("" + numToPrint);
     }
 }
