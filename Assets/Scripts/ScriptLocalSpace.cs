@@ -1,5 +1,5 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
+/* using UnityEngine;
+ using UnityEngine.InputSystem;
 
 public class ScriptLocalSpace : MonoBehaviour
 {
@@ -73,3 +73,4 @@ public class ScriptLocalSpace : MonoBehaviour
         }
     }
 }
+*/

@@ -8,7 +8,7 @@ public class DeathVolume : MonoBehaviour
 
         if(death != null)
         {
-            death.Die();
+          death.Die();
         }
     }
 }

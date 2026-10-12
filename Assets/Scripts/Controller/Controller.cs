@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cotroller : MonoBehaviour
+public abstract class Controller : MonoBehaviour
 {
     public Pawn pawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

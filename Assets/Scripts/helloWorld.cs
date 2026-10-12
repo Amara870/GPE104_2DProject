@@ -8,6 +8,7 @@ public class helloWorld : MonoBehaviour
         string testVar = OutputHello();
 
         Debug.Log("Hello World");
+        Debug.Log(testVar);
     }
 
     // Update is called once per frame

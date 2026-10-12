@@ -1,4 +1,4 @@
-using UnityEngine;
+/* using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class spriteMover : MonoBehaviour
@@ -7,10 +7,15 @@ public class spriteMover : MonoBehaviour
     public Vector2 minRange;
     public Vector2 maxRange;
 
+    public KeyCode teleportKey;
+    public KeyCode escapeKey;
+    
+    private Transform tf;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        tf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -18,7 +23,7 @@ public class spriteMover : MonoBehaviour
     {
 
         // check if player is pressing the quit key
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Input.GetKey(escapeKey))
         {
             Debug.Log("Quit button pressed");
             Application.Quit();
@@ -30,7 +35,7 @@ public class spriteMover : MonoBehaviour
         }
 
         // check if the player is pressing the movement keys
-        if (Keyboard.current.tKey.wasPressedThisFrame) {
+        if (Input.GetKey(teleportKey)) {
             Debug.Log("Pressing movement keys");
             MoveSprites();
         }
@@ -46,6 +51,7 @@ public class spriteMover : MonoBehaviour
         float randomY = Random.Range(minRange.y, maxRange.y);
 
         // apply the random position to the sprites
-        transform.position = new Vector2(randomX, randomY);
+        tf.position = new Vector2(randomX, randomY);
     }
 }
+*/
