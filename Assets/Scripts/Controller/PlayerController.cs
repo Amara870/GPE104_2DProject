@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerControl : Controller
+public class PlayerController : Controller
 {
 
     public KeyCode moveForwardKey;
@@ -16,6 +16,9 @@ public class PlayerControl : Controller
     public KeyCode teleportKey;
     public KeyCode escapeKey;
     public KeyCode leftShift;
+    public KeyCode rightShift;
+
+    public float turbo;
 
     public override void Start()
     {
@@ -29,12 +32,9 @@ public class PlayerControl : Controller
 
     public override void MakeDecisions()
     {
-        if (Input.GetKey(leftShift))
+        if (Input.GetKey(leftShift) || Input.GetKey(rightShift))
         {
-            if (Input.GetKey(moveForwardKey))
-            {
-                pawn.Move(pawn.transform.up);
-            }
+            pawn.moveSpeed = turbo; 
         }
 
         if(Input.GetKey(moveForwardKey))
