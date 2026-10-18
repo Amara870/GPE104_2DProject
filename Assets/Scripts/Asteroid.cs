@@ -7,7 +7,16 @@ public class Asteroid : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameManager gm = GameManager.instance;
+
+        if (gm != null)
+        {
+            if (gm.asteroidList != null)
+            {
+                gm.asteroidList.Add(this);
+
+            }
+        }
     }
 
     // Update is called once per frame

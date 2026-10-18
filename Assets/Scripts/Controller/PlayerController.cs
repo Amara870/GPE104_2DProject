@@ -18,11 +18,18 @@ public class PlayerController : Controller
     public KeyCode leftShift;
     public KeyCode rightShift;
 
+    public KeyCode shootKey;
+
     public float turbo;
 
     public override void Start()
     {
+       GameManager gm = GameManager.instance;
 
+        if (gm != null)
+        {
+            gm.playerController = this;
+        }
     }
 
     public override void Update()
@@ -94,6 +101,11 @@ public class PlayerController : Controller
             // This line safely closes play mode inside the Unity Editor during testing
             UnityEditor.EditorApplication.isPlaying = false;
             #endif
+        }
+
+        if (Input.GetKeyDown(shootKey))
+        {
+            pawn.Shoot();
         }
     }
 }

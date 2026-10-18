@@ -6,6 +6,8 @@ public class StarShipBot : Pawn
     public override void Start()
     {
         tf = GetComponent<Transform>();
+
+        base.Start();
     }
 
     public override void Update()
@@ -39,5 +41,10 @@ public class StarShipBot : Pawn
 
         // apply the random position to the sprites
         tf.position = new Vector2(randomX, randomY);
+    }
+
+    public override void Shoot()
+    {
+        shooter.Shoot();
     }
 }

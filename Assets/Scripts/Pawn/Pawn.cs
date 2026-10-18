@@ -8,8 +8,13 @@ public abstract class Pawn : MonoBehaviour
     public Vector2 minRange;
     public Vector2 maxRange;
 
+    public Shooter shooter;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public abstract void Start();
+    public virtual void Start()
+    {
+        shooter = GetComponent<Shooter>();
+    }
 
 
     // Update is called once per frame
@@ -22,4 +27,6 @@ public abstract class Pawn : MonoBehaviour
     public abstract void Rotate(float speed);
 
     public abstract void Teleport();
+
+    public abstract void Shoot();
 }
