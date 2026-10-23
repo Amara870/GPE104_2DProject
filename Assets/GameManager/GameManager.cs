@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,11 @@ public class GameManager : MonoBehaviour
     public PlayerController playerController;
 
     public List<Asteroid> asteroidList;
+
+    public int score;
+
+    // create UI variable to grab UI element
+    private TextMeshProUGUI ScoreValue;
 
     public void Awake()
     {
@@ -37,5 +44,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Over!");
         }
+    }
+
+    public void AddToScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+
+        // Grab the UI element from the scene
+        ScoreValue = GameObject.Find("ScoreValue").GetComponent<TextMeshProUGUI>();
+
+        // Convert the int to a string and set the text of the UI element to the new score
+        ScoreValue.text = score.ToString();
     }
 }

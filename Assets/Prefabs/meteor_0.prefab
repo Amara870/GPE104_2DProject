@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c7eb54a97b9914194c3dd3ddbdab6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroy
+  scoreToAdd: 15
 --- !u!114 &8440039370283942289
 MonoBehaviour:
   m_ObjectHideFlags: 0
