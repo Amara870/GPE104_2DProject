@@ -58,6 +58,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 0cdd0f1fc6b316d4d887cfc5393e00bb
+    name: EnemiesAudio
   - guid: 14776d0ad56940b4d9e830b19d6e47f4
     name: MainAudio
   - guid: 1647b4f4358df9049a120076b94bd045
@@ -121,6 +123,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     1647b4f4358df9049a120076b94bd045: -19.928473
     14776d0ad56940b4d9e830b19d6e47f4: -0.13657497
+    0cdd0f1fc6b316d4d887cfc5393e00bb: -25
   m_TransitionOverrides: {}
 --- !u!243 &2574385533869413877
 AudioMixerGroupController:
