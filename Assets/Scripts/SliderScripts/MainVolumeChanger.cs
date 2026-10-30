@@ -9,6 +9,7 @@ public class MainVolumeChanger : MonoBehaviour
     public Slider mainSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Slider enemiesSlider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,6 +17,9 @@ public class MainVolumeChanger : MonoBehaviour
         OnMainVolumeChange();
         OnMusicVolumeChanger();
         OnSFXVolumeChanger();
+        OnEnemiesVolumeChanger();
+
+        audioMixer.SetFloat("EnemiesAudio", -25);
     }
 
     // Update is called once per frame
@@ -71,5 +75,21 @@ public class MainVolumeChanger : MonoBehaviour
         }
 
         audioMixer.SetFloat("SFXAudio", newVolume);
+    }
+
+    public void OnEnemiesVolumeChanger()
+    {
+        float newVolume = enemiesSlider.value;
+        if (newVolume <= 0)
+        {
+            newVolume = -80;
+        }
+        else
+        {
+            newVolume = Mathf.Log10(newVolume);
+            newVolume = newVolume * 20;
+        }
+
+        audioMixer.SetFloat("EnemiesAudio", newVolume);
     }
 }
