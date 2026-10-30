@@ -6,10 +6,12 @@ public class ShooterBullet : Shooter
 
     public Transform bulletSpawnPoint;
 
+    public AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +22,10 @@ public class ShooterBullet : Shooter
 
     public override void Shoot()
     {
+        if(audioSource != null)
+        {
+            audioSource.Play();
+        }
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 }
