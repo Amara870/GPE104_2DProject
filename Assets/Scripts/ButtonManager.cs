@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -13,4 +14,20 @@ public class ButtonManager : MonoBehaviour
     {
         
     }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        Debug.Log("Loading scene: " + sceneName);
+    }   
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        #if UNITY_EDITOR
+                // This line safely closes play mode inside the Unity Editor during testing
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
+
 }
